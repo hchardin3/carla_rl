@@ -1,0 +1,11 @@
+# Agent configuration parameters
+
+state_space: 84              # Dimension of the state space (e.g., 84x84 RGB image)
+action_space: 3               # Dimension of the action space (e.g., [throttle, brake, steer])
+max_memory: 1000000           # Maximum size of the replay memory buffer
+learning_rate: 0.001          # Learning rate for the optimizer
+discount_factor: 0.99         # Discount factor (gamma) for the Q-learning update
+epsilon: 1.0                  # Initial epsilon value for epsilon-greedy action selection
+epsilon_decay: 0.995          # Rate at which epsilon decays after each episode
+epsilon_min: 0.001            # Minimum value of epsilon for exploration
+target_update_interval: 1000  # How often to update the target network (in steps)

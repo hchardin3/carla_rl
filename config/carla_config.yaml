@@ -1,0 +1,39 @@
+# Carla Environment Configuration
+
+# Server connection settings
+host: "localhost"  # CARLA server host
+port: 2000         # CARLA server port
+timeout: 10.0      # Timeout for CARLA client (in seconds)
+
+# Environment parameters
+town: "Town01"     # CARLA map to load (e.g., Town01, Town02, etc.)
+weather: "ClearNoon"  # Weather preset (ClearNoon, WetNoon, WetSunset, etc.)
+vehicle_model: "vehicle.tesla.model3"  # Vehicle model to spawn (can use blueprint names from CARLA)
+spawn_point: 0     # Index of the spawn point for the vehicle (use random if you want to randomize)
+max_episode_length: 1000  # Maximum steps per episode
+
+# Sensor configuration
+sensors:
+  rgb_camera:
+    enabled: true
+    image_size_x: 84  # Width of the RGB image
+    image_size_y: 84  # Height of the RGB image
+    fov: 110          # Field of view
+    position: 
+      x: 1.5         # Position offset of the camera from the vehicle (front)
+      z: 2.4         # Height of the camera from the vehicle (above the roof)
+
+  collision_sensor:
+    enabled: true    # Enable or disable the collision sensor
+
+  lidar_sensor:
+    enabled: false   # Optionally enable LiDAR sensor (disabled by default)
+
+# Action space
+max_acc: 1.0        # Maximum forward acceleration
+back_acc: 0.5       # Maximum backward acceleration (reverse)
+max_decc: 1.0       # Maximum braking deceleration
+max_wheel_angle: 0.3  # Maximum steering angle (in radians)
+
+# Rendering options
+render: true        # Render the environment (set to false for headless mode)
